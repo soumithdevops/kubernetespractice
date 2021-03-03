@@ -8,56 +8,56 @@ Templates to work on kubernetes & Here in below listing most useful commands and
 A Cluster is a set of nodes (Mater & Worker Nodes)
 Components—> API, etc, kubelet(agent), Container runtime, Scheduler, Controller.
 Command line utility kubectl,  kube command line, or tube control.
-Kubectl run command is used to deploy an application on the cluster .
+kubectl run command is used to deploy an application on the cluster .
 The “kubectl cluster-info” command is used to view information about the cluster.
 Minikube——> VirtualBox(hypervisor)
 Is a iso image
 kubectl get nodes
 kubectl get nodes -o wide
-Kubectl run nginx —image=nginx
-Kubectl get pods
-Kubectl describe nginx
-Kubectl apply -f pod.yaml
-Kubectl describe pod nginx
-Kubectl edit pod nginx
+kubectl run nginx —image=nginx
+kubectl get pods
+kubectl describe nginx
+kubectl apply -f pod.yaml
+kubectl describe pod nginx
+kubectl edit pod nginx
 Pod definition file
 
 ***Replication Controller and ReplicaSets:***
   - Replication Controller is older technology that is replaced by replicates, replica set is new recommendation to set replication
-Kubectl create -f rc-definition.yaml
-Kubectl get replication controller
-Kubectl get pods
+kubectl create -f rc-definition.yaml
+kubectl get replication controller
+kubectl get pods
 
 ***Replica Set:***
-Kubectl create -f replicates-definition.yaml
-Kubectl get replicates
-Kubectl get pods
+kubectl create -f replicates-definition.yaml
+kubectl get replicates
+kubectl get pods
 
 ***Labels & Selectors:***
 ***Scale:***
-Kubectl replace -f replicaset-definition.yaml (or)
-Kubectl scale —replica=6 -f replicates-definition.yaml (or)(this will not change in definition file)
-Kubectl scale —replica=6 -f replicates myapp-replicaset
+kubectl replace -f replicaset-definition.yaml (or)
+kubectl scale —replica=6 -f replicates-definition.yaml (or)(this will not change in definition file)
+kubectl scale —replica=6 -f replicates myapp-replicaset
 
 ***Deployments:***
-Kubectl create -f deployment.yaml
-Kubetctl get deployments
-Kubectl get all
-Kubectl describe deployment my app-deployment
+kubectl create -f deployment.yaml
+kubetctl get deployments
+kubectl get all
+kubectl describe deployment my app-deployment
 
 ***Rollout and  Versioning***
 Rollout Commands
-Kubectl rollout status deployment/myapp-deployment
-Kubectl rollout history deployment/myapp-deployment
+kubectl rollout status deployment/myapp-deployment
+kubectl rollout history deployment/myapp-deployment
 Rollback
-Kubectl rollout undo deployment/myapp-deployment
+kubectl rollout undo deployment/myapp-deployment
 
 ***Deployment Strategy***
 Recreate startegy,  Rolling Update(default)
 
 ***Kubectl apply***
-Kubectl apply -f deployment-definition.yml (or)
-Kubectl set image deployment/myapp-deployment \ nginx=nginx:1.9.1
+kubectl apply -f deployment-definition.yml (or)
+kubectl set image deployment/myapp-deployment \ nginx=nginx:1.9.1
 
 ***Record change-cause***
  kubectl create -f deployment.yaml --record
@@ -78,7 +78,7 @@ clusterIP- Services creates virtual IP inside cluster to enable communication be
 Loadbalancer-  Where it provisions a load balancer for our application in supported cloud providers
 TargetPort(pod port)—>port(Service port)——>Nodeport(port on node)
 List services
-Kubectl get services
+kubectl get services
 kubectl describe service kubernetes
 Default Service is ClusterIP
-Loadbalcers like Jproxy or nginx
+Loadbalancers like Jproxy or nginx
